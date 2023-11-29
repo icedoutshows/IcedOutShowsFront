@@ -1,17 +1,17 @@
 @font-face {
     font-family: 'FuenteIcedOut';
-    src: url('C:\Users\marco\Downloads\IcedOutShowsWeb\src\assets\Whitestone.otf')
+    src: url('.\assets\Whitestone.otf')
   
   }
   @font-face {
     font-family: 'FuenteShows';
-    src: url('C:\Users\marco\Downloads\IcedOutShowsWeb\src\assets\Pyromaani.ttf')
+    src: url('.\assets\Pyromaani.ttf')
   
   }
 
   @font-face {
     font-family: 'FuenteNavNegro';
-    src: url('C:\Users\marco\Downloads\IcedOutShowsWeb\src\assets\Kanit-SemiBold.ttf')
+    src: url('.\assets\Kanit-SemiBold.ttf')
   
   }
  
