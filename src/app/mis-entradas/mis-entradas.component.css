@@ -1,0 +1,55 @@
+
+
+.entrada{
+    background-color: #12486B;
+    border-radius: 2%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 550px;
+}
+
+.imagen{
+    max-height: max-content;
+    max-width: 200px;
+    object-fit: cover;
+}
+
+.margen{
+    display: flex;
+    right: 100%;
+}
+
+.precio{
+    font-family:'FuenteNavNegro';
+    margin-left: 50%;
+    margin-top: 60%;
+}
+
+.card-body{
+    display: flex;
+   
+}
+
+.info-card{
+
+    margin-top: 10px;
+    margin-left: 10px;
+    display: block;
+}
+
+
+.mes{
+    font-weight: 500;
+background-color:rgb(71, 71, 255);
+}
+
+.dia{
+font-size: 25px;
+font-weight: 700;
+}
+
+.dia-semana{
+    font-size: 15px;
+    font-weight: 500;
+}

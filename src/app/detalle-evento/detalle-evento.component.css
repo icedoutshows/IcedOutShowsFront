@@ -1,0 +1,40 @@
+
+
+.imagen{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+    border-bottom-right-radius: 2%;
+    border-bottom-left-radius: 2%;
+    
+}
+
+.texto{
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 20px; 
+    text-align: center;
+    font-family:'FuenteNavNegro';
+}
+
+.horizontal{
+    display: flex;
+    margin: 20px;
+}
+
+
+.card{
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.botonComprar{
+   margin-left: 60%;
+}

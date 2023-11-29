@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+    <div style="position: relative;">
+<img class="imagen" alt="imagen" src="{{evento.imagen}}">
+<div class="texto"><h1>{{evento.titulo}}</h1></div>
+</div>
+
+
+<div class="card" *ngFor="let entrada of entradas">
+    <div class="card-header">
+      {{evento.titulo}}
+     
+    </div>
+    <div class="card-body horizontal" >
+        <div>
+      <h5 class="card-title">{{entrada.lugar}}</h5>
+      <p class="card-text">{{entrada.fecha}}</p>
+    </div>
+    <div class="botonComprar">
+    <p>{{entrada.precio}}€</p>
+      <button class="btn btn-primary " type="button"  [routerLink]="['/evento', entrada.evento.id, 'entrada', entrada.entradaId]" >Comprar <img alt="comprar" src="../assets/flecha.png"></button>
+    </div>
+    </div>
+  </div>
+
+

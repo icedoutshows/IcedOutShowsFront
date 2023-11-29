@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<h3 style="margin-top: 20px;">Tus Entradas:</h3>
+<div class="card-icon card-icon-large entrada" style="display: flex;" *ngFor="let entrada of entradas">
+  
+  <img class="imagen" alt="img" src="{{entrada.evento.imagen}}">
+    <div class="card-body">
+      <div class="info-card">
+        <div style="display: flex;">
+        <img style="width: 30px; height: 30px;" alt="img" src="../assets/artista.png"> <p style="font-weight: 500; color: black;">{{entrada.artista}}</p>
+      </div>
+      <div style="display: flex;">
+        <img style="width: 30px; height: 30px;" alt="img" src="../assets/lugar.png"> <p style="font-weight: 500; color: black;">{{entrada.lugar}}</p>
+     </div>
+      <div class=" bg-white min-h-48 mb-4 font-medium">
+          <div class="block overflow-hidden  text-center ">
+            <div class="py-1 mes">
+              {{ entrada.fecha | date:'MMMM':'es' }}
+            </div>
+            <div class="pt-1 border-l ">
+              <span class="dia">
+                {{ entrada.fecha | date:'d':'es' }}
+                    </span>
+            </div>
+            <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
+              <span class=" dia-semana">
+                {{ entrada.fecha | date:'EEEE':'es' }}
+                    </span>
+            
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="precio">
+      <p style="font-weight: 500; color: black;">{{entrada.precio}}€</p>
+    </div>
+    </div>
+
+  </div>
+  
+

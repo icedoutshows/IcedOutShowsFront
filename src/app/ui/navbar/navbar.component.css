@@ -1,0 +1,158 @@
+.navbar-texto {
+    font-family: "FuenteIcedOut", sans-serif; 
+    color: #F5FCCD;
+    margin-left: 150px;
+  }
+  .texto-shows {
+    font-family: "FuenteShows", sans-serif; 
+    color: black;
+  }
+
+  .navbar-custom {
+    height: 100px; 
+    
+  }
+ 
+
+  .texto-size{
+   font-size: 50px;
+  }
+
+  .ajustes-boton{
+    background-color: black;
+    color: white;
+    border-color: black;
+    border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
+  }
+
+ 
+
+  .imagen{
+    height: 60px;
+    width: 60px;
+   
+  }
+
+  .imagen-perfil{
+    height: 40px;
+    width: 40px;
+   
+  }
+  .margen-acceder{
+    margin-left: 10px;
+  }
+
+  .navbar-left{
+    float: left;
+    margin-left: 20px;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .imagenEntradas{
+    width: 50px;
+    height: 50px;
+    margin-left: 100px;
+  }
+
+  .navbar-center{
+    float: left;
+    margin-top: 10px;
+  }
+
+  .navbar-right{
+    float: right;
+    margin-right: 30px;
+    display:flex;
+    margin-left: 60px;
+   
+  }
+
+
+.navbar2-custom{
+  height: 50px;
+  background-color:#12486B;
+  display: flex;
+  justify-content: center;
+  font-family:'FuenteNavNegro';
+
+}
+
+.form-select{
+  width: 110px;
+  background-color: #111;
+  color: white;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+
+.margenes{
+  border-collapse: separate; 
+  border-spacing: 10px;
+
+}
+
+.imgEntradas{
+  width: 30px;
+  height: 30px;
+  
+}
+
+.text-container > span {
+  text-transform: uppercase;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animacion {
+  text-decoration: none;
+  animation: cambioColor 7s linear infinite; 
+  
+}
+
+@keyframes cambioColor {
+  0%, 100% {
+    color: black;
+  }
+  50% {
+    color: white;
+  }
+}
+@keyframes glow {
+  0%, 100% {
+    color: #FFF;
+    text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
+  }
+  
+  10%, 90% {
+    color: #111;
+    text-shadow: none;
+  }
+}
+
+.text-container > span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.text-container > span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.text-container > span:nth-child(4) {
+  animation-delay: 0.75s;
+}
+
+.text-container > span:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.text-container > span:nth-child(6) {
+  animation-delay: 1.25s;
+}
+
+.text-container > span:nth-child(7) {
+  animation-delay: 1.5s;
+}

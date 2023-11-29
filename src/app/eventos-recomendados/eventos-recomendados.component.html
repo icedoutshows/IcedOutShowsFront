@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="contenedor">
+ 
+  <carousel>
+    <slide *ngFor="let eventoRec of eventosRecomendados" [routerLink]="['/evento/', eventoRec.id]">
+      <div style="position: relative;">
+         <img [src]="eventoRec.imagen" class="imagenCarrusel" alt="Slide">
+      <h3 class="textoRec" style="margin-right: 10px;">{{eventoRec.descripcion}} <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', eventoRec.id]" class="textoRec" src="../assets/edit.png"/></h3>
+      
+   
+    </div>
+    </slide>
+  </carousel>
+
+     
+      <br>
+      
+      
+
+
+
+
+      <button type="button" *ngIf="isAdmin" class="btn btn-outline-primary botonCrear " routerLink="/crear">Crear Evento <img alt="img" src="../assets/add.png"> </button>
+
+     <!-- Eventos en modo tarjeta -->
+     <div class="margenes" >
+     
+      <div *ngFor="let evento of eventosLista" class="margenAbajo" [routerLink]="['/evento/', evento.id]"
+        routerLinkActivated="active">
+          <div class="container"> 
+        <img class="imagen" alt="img" src="{{evento.imagen}}">
+        <div>
+        <img alt="cancel" *ngIf="isAdmin" (click)="eliminarEvento(evento)" class="fa-download" src="../assets/cancel.png"/>
+        <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', evento.id]" class="fa-download2" src="../assets/edit.png"/>
+      </div>
+      </div> 
+         <p class="texto">{{evento.descripcion}}</p>
+           
+        </div>
+</div>
+
+       
+</div>

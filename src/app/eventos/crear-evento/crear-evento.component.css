@@ -1,0 +1,14 @@
+.contenedor{
+    height: 500px;
+   
+}
+.margen{
+    margin-bottom: 40px;
+}
+
+
+
+.centrar{
+    display: inline;
+    align-items: center;
+}

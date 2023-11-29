@@ -1,0 +1,21 @@
+.container{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.boton{
+    margin-top: 100px;
+    position: relative;
+  
+
+}
+
+.numEntradas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

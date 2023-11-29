@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+<h3 style="margin-top: 20px; margin-left: 30px; font-family:'FuenteNavNegro'"><img alt="img" style="width: 30px; " src="../assets/lupa.png">Búsqueda:</h3>
+<h5 style="text-align: center; margin-bottom: 100px;">{{mensaje}}</h5>
+<div class="card container" style="justify-content: center;" *ngFor="let entrada of entradas">
+   <div style="display: flex;">
+       <img alt="img" class="imagen" src="{{entrada.evento.imagen}}">
+<h3 style="margin-right: 30px;">{{entrada.artista}}</h3>
+<div class="boton">
+<button class="btn btn-primary " type="button"  [routerLink]="['/evento', entrada.evento.id, 'entrada', entrada.entradaId]" >Comprar <img alt="comprar" src="../assets/flecha.png"></button>
+</div>
+</div>
+</div>

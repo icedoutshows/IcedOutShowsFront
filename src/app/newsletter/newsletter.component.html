@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div style="display: flex;">
+<form class="contenedor margenes" >
+    <h3>Suscríbete a nuestra newsletter:</h3>
+    <p>Podrás recibir distintas novedades que están de camino</p>
+    <div class="form-group">
+        <label for="descripcion">Email:</label>
+        <input type="email" placeholder="email" class="form-control" id="email" name="email"
+        [(ngModel)]="email" required>
+    </div>
+    <button type="button" class="btn btn-outline-success btn-block " (click)="suscribirse()">
+        <i class="fas fa-plus-circle"></i> Suscríbete</button>
+    
+</form>
+
+<img class="imagen" alt="newsletter" src="../assets/newsletter.png">
+</div>

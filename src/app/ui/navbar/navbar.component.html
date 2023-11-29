@@ -1,0 +1,52 @@
+<nav class="navbar navbar-custom texto-size contenedor" style="background-color: #12486B;" >
+
+  <div class="navbar-left">
+    <a *ngIf="!isLogged" class="nav-link" aria-current="page" 
+          routerLink="/login"
+          routerLinkActive="active">
+    <img alt="menu"  class="imagen-perfil" src="../assets/user.png" ><span class="margen-acceder">Acceder</span>
+    </a>
+    <a  *ngIf="isLogged" (click)="onLogout()" class="nav-link" aria-current="page" 
+    routerLink="/login"
+    routerLinkActive="active">
+<img alt="menu"  class="imagen-perfil" src="../assets/logout.png" ><span class="margen-acceder">Cerrar Sesión</span>
+</a>
+<img alt="mis-entradas" routerLink="/entradas" class="imagenEntradas" src="../assets/misEntradas.png">
+  </div>
+  
+<div class="navbar-center">
+  <a class="nav-link" aria-current="page" 
+  routerLink="/home"
+  routerLinkActive="active">
+ <p><span class="navbar-texto">IcedOut</span> <span class="texto-shows"> Shows</span></p>
+  </a>
+</div>
+
+
+
+<div class="navbar-right" style="font-family:'FuenteNavNegro'">
+  <select id="select" class="form-select" aria-label="Default select example">
+    <option selected value="artista">Artista</option>
+    <option value="lugar">Lugar</option>
+    <option value="recinto">Recinto</option>
+   
+  </select>
+  <input #searchInput type="search" class="form-control" style="border-radius: 0%;" placeholder="Artista, evento, lugar..." aria-label="Search" aria-describedby="search-addon"  [(ngModel)]="valorInput" required />
+  <button type="button" class="btn btn-outline-primary ajustes-boton" (click)="buscar()" >Buscar</button>
+  </div>
+  </nav>
+
+
+<nav class="navbar2-custom ">
+ <table class="margenes">
+
+  <tr>
+    <a class="animacion" routerLink="/newsletter"><td >Suscríbete a la newsletter</td></a>
+    <a title="paypal" class="animacion" href="https://www.paypal.com/es/home" target="_blank"><td>Pay Pal</td></a>
+    <a title="rollingloud" class="animacion"href=" https://www.rollingloud.com/" target="_blank"><td>Rolling Loud Setlist</td></a>
+    <a class="animacion" routerLink="/help"><td>Ayuda</td></a>
+  </tr>
+</table>
+
+
+</nav>

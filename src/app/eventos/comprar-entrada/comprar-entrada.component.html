@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="col-xl-6 col-lg-6">
+    <div class="card l-bg-green-dark">
+        <div class="card-statistic-3 p-4">
+            <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
+            <div class="mb-4">
+                <h5 class="card-title mb-0">{{entrada.artista}} en {{entrada.lugar}} el {{fechaFormateada}}</h5>
+            </div>
+            <div class="row align-items-center mb-2 d-flex">
+                <div class="col-8">
+                    <h2 class="d-flex align-items-center mb-0">
+                        {{entrada.precio}}€
+                    </h2>
+                   
+                </div>
+                <div class="col-4 text-right">
+                    <span>x{{numEntrada}} <i class="fa fa-arrow-up"></i></span>
+                    <img alt="cancel" *ngIf="isAdmin" (click)="eliminarEntrada()" class="fa-download" src="../assets/cancel.png"/>
+                    <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editarEntrada/', entrada.entradaId]" class="fa-download2" src="../assets/edit.png"/>
+                 
+                </div>
+            </div>
+
+
+
+
+
+
+    <ngx-spinner type="ngx-spinner ">
+        <h2 style="color: white;">Realizando el pago...</h2>
+        
+      </ngx-spinner>
+  <div class="boton">
+    <div class="numEntradas">
+      
+    <button type="button" class="btn btn-secondary" (click)="decrementar()" [disabled]="numEntrada == 1">-</button>
+    <p style="margin-left: 20px; margin-right: 20px; font-size: large;">{{numEntrada}}</p>
+    <button type="button" class="btn btn-secondary" (click)="incrementar()" [disabled]="numEntrada == 20">+</button>
+</div>
+<ngx-paypal [config]="payPalConfig" ></ngx-paypal>
+</div>
+</div>
+</div>
