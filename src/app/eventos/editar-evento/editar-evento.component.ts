@@ -34,7 +34,7 @@ export class EditarEventoComponent {
   
   editar():void{
     console.log('estoy en editar')
-    console.log(this.evento.id)
+    console.log(this.evento.evento_id)
 this.eventoService.update(this.evento).subscribe(
   evento =>{
     this.router.navigate(['/home'])

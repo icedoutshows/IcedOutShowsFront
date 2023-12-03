@@ -9,7 +9,7 @@ import { TokenService } from '../services/token.service';
 export class EventInterceptorService implements HttpInterceptor{
 
   constructor(private tokenService:TokenService) { }
-
+//Se encarga de añadir un token a las solicitudes salientes, obtenido del servicio
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let intReq = req;
     const token=this.tokenService.getToken()

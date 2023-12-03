@@ -59,7 +59,7 @@ export class EventosRecomendadosComponent {
       confirmButtonText: 'Sí, elimínalo!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.eventoService.delete(evento.id!).subscribe(
+        this.eventoService.delete(evento.evento_id!).subscribe(
           response =>{
             this.eventos=this.eventos.filter(ev => ev !== evento)
             this.router.navigateByUrl('home');

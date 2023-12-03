@@ -60,7 +60,8 @@ import { AyudaComponent } from './ayuda/ayuda.component';
     NotifierModule,
     CarouselModule,
     NgxPayPalModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+   
     
   ],
   providers: [EventoServiceService , {

@@ -2,7 +2,7 @@ import { Entrada } from "./entrada";
 
 export class Evento {
 
-     id?:number;
+     evento_id?:number;
      descripcion:string;
      imagen:string;
      titulo:string

@@ -158,6 +158,12 @@ export class ComprarEntradaComponent {
         },
         onClientAuthorization: (data) => {
           this.spinner.hide()
+          this._eventoService.authenticateEntradas(this.idEntrada,this.tokenService.getUserName()).subscribe(
+            data =>
+            console.log("Entradas enviadas por correo"),
+            error=>
+            console.log("No se ha enviado la entrada por correo")
+          )
             console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
             this._eventoService.asignarEntradaAUsuario(this.tokenService.getUserName(), this.idEntrada)
             .subscribe(response => {
@@ -170,7 +176,7 @@ export class ComprarEntradaComponent {
               this._router.navigateByUrl("/home")
             }, error => {
               console.error('Error al asignar la entrada:', error);
-            });
+            }); 
         },
         onCancel: (data, actions) => {
             console.log('OnCancel', data, actions);           

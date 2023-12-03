@@ -9,6 +9,7 @@ export class Entrada {
     artista:string;
     precio:number;
     evento!:Evento;
+    codigoId!:string;
     
     constructor(lugar:string,recinto:string,fecha:string,artista:string,precio:number ){
         this.lugar=lugar

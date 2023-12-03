@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventosRecomendadosComponent } from './eventos-recomendados/eventos-recomendados.component';
 import { DetalleEventoComponent } from './detalle-evento/detalle-evento.component';
 import { LoginComponent } from './auth/login.component';
-import { EventGuardService as Guard} from './guards/event-guard.service';
+import { EventGuardService as guard} from './guards/event-guard.service';
 import { CrearEventoComponent } from './eventos/crear-evento/crear-evento.component';
 import { RegistroComponent } from './auth/registro.component';
 import { EditarEventoComponent } from './eventos/editar-evento/editar-evento.component';
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'eventos/buscarPorArtista/:artista', component: BuscarPorArtistaComponent},
   { path: 'eventos/buscarPorLugar/:lugar', component: BuscarPorLugarComponent},
   { path: 'eventos/buscarPorRecinto/:recinto', component: BuscarPorRecintoComponent},
-  { path: 'evento/:idEvento/entrada/:idEntrada', component: ComprarEntradaComponent },
+  { path: 'evento/:idEvento/entrada/:idEntrada', component: ComprarEntradaComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   { path: 'login', component: LoginComponent },
   { path: 'login/registro', component: RegistroComponent },
   { path: 'newsletter', component: NewsletterComponent },
