@@ -43,10 +43,10 @@ export class ComprarEntradaComponent {
       }
     })
     
-    this.initConfig()
+    
 
-    
-    
+
+    this.initConfig()
 
     let idEntrada = this._activatedRoute.snapshot.paramMap.get('idEntrada');
       if (idEntrada !== null) {
@@ -77,29 +77,8 @@ export class ComprarEntradaComponent {
      
       
   }
-
-  incrementar(){
-    if(this.numEntrada<20){
-      this.numEntrada++;
-    }
-   
-    
-  }
-
-  decrementar(){
-    if(this.numEntrada>1)
-    this.numEntrada--;
-  }
-
-  calcularTotal():number{
-
-    let total= this.numEntrada*this.entrada.precio
-    return total;
-  }
-
-
   formatearFecha() {
-    const fecha = new Date(this.entrada.fecha);
+    const fecha = new Date(this.entrada.evento.fecha);
     const meses = [
       'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
       'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
@@ -124,11 +103,11 @@ export class ComprarEntradaComponent {
             purchase_units: [{
                 amount: {
                     currency_code: 'EUR',
-                    value: this.calcularTotal().toString(),
+                    value: this.entrada.evento.precio.toString(),
                     breakdown: {
                         item_total: {
                             currency_code: 'EUR',
-                            value: this.calcularTotal().toString()
+                            value:  this.entrada.evento.precio.toString()
                         }
                     }
                 },
@@ -139,7 +118,7 @@ export class ComprarEntradaComponent {
                     category: 'DIGITAL_GOODS',
                     unit_amount: {
                         currency_code: 'EUR',
-                        value: this.entrada.precio.toString(),
+                        value: this.entrada.evento.precio.toString(),
                     },
                 }]
             }]
@@ -164,8 +143,9 @@ export class ComprarEntradaComponent {
             error=>
             console.log("No se ha enviado la entrada por correo")
           )
-            console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-            this._eventoService.asignarEntradaAUsuario(this.tokenService.getUserName(), this.idEntrada)
+           
+
+            this._eventoService.asignarEntradaAUsuario(this.tokenService.getUserName(), this.idEntrada,this.numEntrada)
             .subscribe(response => {
               console.log('Entrada asignada correctamente:', response);
               swal.fire(
@@ -210,7 +190,7 @@ eliminarEntrada():void{
           this._router.navigateByUrl('home');
           swal.fire(
             'Borrado!',
-            'El evento se ha borrado.',
+            'La entrada se ha borrado.',
             'success'
           )
         }

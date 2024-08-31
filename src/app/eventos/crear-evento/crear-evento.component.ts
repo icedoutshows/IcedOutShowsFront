@@ -14,13 +14,17 @@ export class CrearEventoComponent {
   imagen:string='';
   titulo:string='';
   recomendado:boolean=false;
+  lugar:string='';
+    fecha:string='';
+    artista:string='';
+    precio:number=0;
 
   constructor(private eventoService:EventoServiceService,private router:Router){
 
   }
 
   crear():void{
-    const evento = new Evento(this.descripcion, this.imagen,this.titulo,this.recomendado);
+    const evento = new Evento(this.descripcion, this.imagen,this.titulo,this.recomendado,this.lugar,this.fecha,this.artista,this.precio);
     if(evento){
   
     this.eventoService.create(evento).subscribe(

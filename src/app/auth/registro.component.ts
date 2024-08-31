@@ -38,14 +38,17 @@ export class RegistroComponent {
   
     this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password,['user']);
     this.authService.nuevo(this.nuevoUsuario).subscribe(
+     
       data => {
-        console.log('usuario creado')
+        console.log(data)
+        this.notifier.notify('success', 'Usuario creado');
         this.router.navigate(['/login']);
-       
+
       },
-      error => {
-        console.log('usuario no creado')
-       this.notifier.notify('error', 'Usuario no creado');
+       error=> {
+        console.log(error)
+        this.notifier.notify('error', 'Usuario no creado');
+       
       }
     );
   }

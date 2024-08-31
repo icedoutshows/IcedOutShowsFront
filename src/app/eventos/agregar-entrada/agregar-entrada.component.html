@@ -3,7 +3,7 @@
     <div class="form-group">
         <label for="descripcion">Lugar:</label>
         <input type="text" class="form-control" id="descripcion" name="descripcion"
-        [(ngModel)]="entrada.lugar" required>
+        [(ngModel)]="entrada.evento.lugar" required>
     </div>
 
     <div class="form-group">
@@ -15,19 +15,19 @@
     <div class="form-group">
         <label for="fecha">Fecha:</label>
         <input type="text" class="form-control" id="fecha" name="fecha"
-        [(ngModel)]="entrada.fecha" required>
+        [(ngModel)]="entrada.evento.fecha" required>
     </div>
 
     <div class="form-group">
         <label for="artista">Artista:</label>
         <input type="text" class="form-control" id="artista" name="artista"
-        [(ngModel)]="entrada.artista" required>
+        [(ngModel)]="entrada.evento.artista" required>
     </div>
 
     <div class="form-group">
         <label for="precio">Precio:</label>
         <input type="number" class="form-control" id="precio" name="precio"
-        [(ngModel)]="entrada.precio" required>
+        [(ngModel)]="entrada.evento.precio" required>
     </div>
    
   

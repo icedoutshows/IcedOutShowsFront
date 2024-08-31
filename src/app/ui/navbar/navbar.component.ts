@@ -1,9 +1,8 @@
-import { Component, ElementRef, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Output, ViewChild } from '@angular/core';
 import { TokenService } from 'src/app/services/token.service';
 import { Evento } from 'src/app/eventos/evento';
 import { EventoServiceService } from 'src/app/eventos/evento-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import swal from 'sweetalert2';
 import { NotifierService } from 'angular-notifier';
 
 @Component({
@@ -13,7 +12,8 @@ import { NotifierService } from 'angular-notifier';
 
 })
 export class NavbarComponent{
-
+  isNavbarSmall = false;
+  isNavbarTransparent = true;
 isLogged=false;
 @ViewChild('searchInput')
 inputSearch?:ElementRef
@@ -48,34 +48,24 @@ this.isLogged=false;
 
 buscar() {
   let valorSelect=document.getElementById("select")as HTMLSelectElement
-  if(valorSelect.value=="artista"){
   if (this.valorInput) {
-    this.router.navigate(['/eventos/buscarPorArtista/',this.valorInput]);
-     
-  }else{
-    this.notifier.notify('error', 'Introduce un valor');
-  }
-}
-if(valorSelect.value=="lugar"){
-  if (this.valorInput) {
-    this.router.navigate(['/eventos/buscarPorLugar/',this.valorInput]);
-     
+    this.router.navigate(['eventos', 'buscar', valorSelect.value, this.valorInput]); 
   }else{
     this.notifier.notify('error', 'Introduce un valor');
   }
 }
 
-if(valorSelect.value=="recinto"){
-  if (this.valorInput) {
-    this.router.navigate(['/eventos/buscarPorRecinto/',this.valorInput]);
-     
-  }else{
-    this.notifier.notify('error', 'Introduce un valor');
+
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  // Verificar si la posición del scroll es mayor que cierto umbral
+  if (window.pageYOffset > 100) {
+    this.isNavbarTransparent = false;
+    this.isNavbarSmall = true;
+  } else {
+    this.isNavbarTransparent = true;
+    this.isNavbarSmall = false;
   }
 }
-}
-
-
-
 
 }

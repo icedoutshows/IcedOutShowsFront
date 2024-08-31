@@ -23,11 +23,9 @@ import { MisEntradasComponent } from './mis-entradas/mis-entradas.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ComprarEntradaComponent } from './eventos/comprar-entrada/comprar-entrada.component';
-import { BuscarPorArtistaComponent } from './eventos/buscar/buscar-por-artista/buscar-por-artista.component';
-import { BuscarPorLugarComponent } from './eventos/buscar/buscar-por-lugar/buscar-por-lugar.component';
-import { BuscarPorRecintoComponent } from './eventos/buscar/buscar-por-recinto/buscar-por-recinto.component';
 import { EditarEntradaComponent } from './eventos/editar-entrada/editar-entrada.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
+import { BuscarPorValorComponent } from './eventos/buscar-por-valor/buscar-por-valor.component';
 
 
 @NgModule({
@@ -45,11 +43,9 @@ import { AyudaComponent } from './ayuda/ayuda.component';
     AgregarEntradaComponent,
     MisEntradasComponent,
     ComprarEntradaComponent,
-    BuscarPorArtistaComponent,
-    BuscarPorLugarComponent,
-    BuscarPorRecintoComponent,
     EditarEntradaComponent,
-    AyudaComponent
+    AyudaComponent,
+    BuscarPorValorComponent
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,15 @@
   }
 
   .navbar-custom {
-    height: 100px; 
-    
+    height: 120px; 
+    position: fixed; /* Esto fija la barra de navegación en su posición */
+    top: 0; /* La barra de navegación estará pegada en la parte superior */
+    left: 0; /* La barra de navegación estará pegada en la parte izquierda */
+    width: 100%; /* La barra de navegación ocupará todo el ancho de la ventana */
+    z-index: 999; /* Asegura que la barra de navegación esté sobre otros elementos */
+  
   }
+  
  
 
   .texto-size{
@@ -62,6 +68,7 @@
   .navbar-center{
     float: left;
     margin-top: 10px;
+    margin-left: 10px;
   }
 
   .navbar-right{
@@ -74,12 +81,9 @@
 
 
 .navbar2-custom{
-  height: 50px;
-  background-color:#12486B;
+  height: 120px;
   display: flex;
   justify-content: center;
-  font-family:'FuenteNavNegro';
-
 }
 
 .form-select{
@@ -155,4 +159,25 @@
 
 .text-container > span:nth-child(7) {
   animation-delay: 1.5s;
+}
+
+
+.navbar {
+  transition: background-color 0.5s ease; /* Agregar una transición suave */
+}
+
+.navbar.transparent {
+  background-color:#12486B;
+}
+
+.navbar.solid {
+  background-color: rgb(41, 41, 41); /* Cambiar #333 al color sólido deseado */
+ 
+}
+
+.navbar-small {
+  transition: all 0.5s ease;
+  height: 90px; 
+  font-size: 35px;
+ 
 }

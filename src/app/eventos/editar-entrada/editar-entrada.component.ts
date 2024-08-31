@@ -12,7 +12,7 @@ import swal from 'sweetalert2';
 export class EditarEntradaComponent {
 
   idEntrada!: number;
-  entrada:Entrada=new Entrada("","","","",0);
+  entrada:Entrada=new Entrada("");
 
 
   constructor(private _activatedRoute: ActivatedRoute,
@@ -39,7 +39,7 @@ export class EditarEntradaComponent {
   this.eventoService.updateEntrada(this.entrada).subscribe(
     entrada =>{
       this.router.navigate(['/home'])
-      swal.fire('Evento Actualizado','actualizado','success')
+      swal.fire('Entrada Actualizada','actualizado','success')
     }
   )
     }

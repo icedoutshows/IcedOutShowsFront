@@ -11,11 +11,9 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { AgregarEntradaComponent } from './eventos/agregar-entrada/agregar-entrada.component';
 import { MisEntradasComponent } from './mis-entradas/mis-entradas.component';
 import { ComprarEntradaComponent } from './eventos/comprar-entrada/comprar-entrada.component';
-import { BuscarPorArtistaComponent } from './eventos/buscar/buscar-por-artista/buscar-por-artista.component';
-import { BuscarPorLugarComponent } from './eventos/buscar/buscar-por-lugar/buscar-por-lugar.component';
-import { BuscarPorRecintoComponent } from './eventos/buscar/buscar-por-recinto/buscar-por-recinto.component';
 import { EditarEntradaComponent } from './eventos/editar-entrada/editar-entrada.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
+import { BuscarPorValorComponent } from './eventos/buscar-por-valor/buscar-por-valor.component';
 
 
 const routes: Routes = [
@@ -25,11 +23,9 @@ const routes: Routes = [
   { path: 'editar/:id', component: EditarEventoComponent },
   { path: 'editarEntrada/:id', component: EditarEntradaComponent },
   { path: 'agregarEntrada/:id', component: AgregarEntradaComponent },
-  { path: 'entradas', component: MisEntradasComponent },
+  { path: 'entradas', component: MisEntradasComponent , canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   { path: 'evento/:id', component: DetalleEventoComponent },
-  { path: 'eventos/buscarPorArtista/:artista', component: BuscarPorArtistaComponent},
-  { path: 'eventos/buscarPorLugar/:lugar', component: BuscarPorLugarComponent},
-  { path: 'eventos/buscarPorRecinto/:recinto', component: BuscarPorRecintoComponent},
+  { path: 'eventos/buscar/:valor/:input', component: BuscarPorValorComponent},
   { path: 'evento/:idEvento/entrada/:idEntrada', component: ComprarEntradaComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   { path: 'login', component: LoginComponent },
   { path: 'login/registro', component: RegistroComponent },

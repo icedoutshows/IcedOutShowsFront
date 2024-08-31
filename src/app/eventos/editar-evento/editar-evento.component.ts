@@ -12,7 +12,7 @@ import swal from 'sweetalert2';
 export class EditarEventoComponent {
 
   idEvento!: number;
-  evento:Evento=new Evento("","","",false);
+  evento:Evento=new Evento("","","",false,"","","",0);
 
   constructor(private _activatedRoute: ActivatedRoute,
     private eventoService: EventoServiceService,

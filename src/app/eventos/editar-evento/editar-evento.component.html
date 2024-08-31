@@ -3,22 +3,22 @@
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
             <form >
-                <div class="form-group">
+                <div class="form-group margen">
                     <label for="descripcion">Descripción:</label>
                     <input type="text" class="form-control" id="descripcion" name="descripcion"
                     [(ngModel)]="evento.descripcion" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group margen">
                     <label for="imagen">Imagen:</label>
                     <input type="text" class="form-control" id="imagen" name="imagen"
                     [(ngModel)]="evento.imagen" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group margen">
                     <label for="titulo">Título:</label>
                     <input type="text" class="form-control" id="titulo" name="titulo"
                     [(ngModel)]="evento.titulo" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group margen">
                     <label for="recomendado">Recomendado:</label><br>
                     <label for="siCheckbox">Sí</label>
                     <input type="radio"  id="siCheckbox" name="opcion" value="true"
@@ -31,11 +31,11 @@
                
                 
                 <button type="button" class="btn btn-outline-success btn-block " (click)="editar()">
-                    <i class="fas fa-plus-circle"></i> Crear</button>
+                    <i class="fas fa-plus-circle"></i> Guardar</button>
             
             </form>
 
-            <div class="form-group" [routerLink]="['/agregarEntrada/', evento.evento_id]">
+            <div class="form-group" style="margin-top: 20px;" [routerLink]="['/agregarEntrada/', evento.evento_id]">
                 <label for="añadir">Añadir Entradas</label>
                     <img alt="img" src="../assets/add.png">
             </div>

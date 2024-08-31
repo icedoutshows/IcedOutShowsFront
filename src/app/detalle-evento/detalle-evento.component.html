@@ -1,7 +1,10 @@
 <app-navbar></app-navbar>
     <div style="position: relative;">
 <img class="imagen" alt="imagen" src="{{evento.imagen}}">
-<div class="texto"><h1>{{evento.titulo}}</h1></div>
+<div class="texto"><h1>{{evento.titulo}}</h1>  <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', evento.evento_id]" class="fa-download2" src="../assets/edit.png"/>
+  <img alt="cancel" *ngIf="isAdmin" (click)="eliminarEvento(evento)" class="fa-download" src="../assets/cancel.png"/></div>
+
+       
 </div>
 
 
@@ -12,11 +15,11 @@
     </div>
     <div class="card-body horizontal" >
         <div>
-      <h5 class="card-title">{{entrada.lugar}}</h5>
-      <p class="card-text">{{entrada.fecha}}</p>
+      <h5 class="card-title">{{entrada.evento.lugar}}</h5>
+      <p class="card-text">{{entrada.evento.fecha}}</p>
     </div>
     <div class="botonComprar">
-    <p>{{entrada.precio}}€</p>
+    <p>{{entrada.evento.precio}}€</p>
       <button class="btn btn-primary " type="button"  [routerLink]="['/evento', entrada.evento.evento_id, 'entrada', entrada.entradaId]" >Comprar <img alt="comprar" src="../assets/flecha.png"></button>
     </div>
     </div>

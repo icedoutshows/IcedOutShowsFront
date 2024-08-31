@@ -1,64 +1,90 @@
-.contenedor{
-    height: 2000px;
-    display: block;
-  
 
+
+.image-grid {
+  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ 
+}
+
+.ultimosEventos{
+  display: flex;
+width: fit-content;
+padding: 7px;
+margin-left: 35px;
+margin-top: 10px;
+border: solid;
+border-width: 4px;
+border-radius: 30px;
+font-size: 20px;
+}
+
+.contenedor{
+ height: 3000px;
+  display: block;
+  background-color: rgb(216, 213, 213);;
 }
 
 .textoRec{
   position: absolute;
   bottom: 10%;
-  color:white;
+  color:rgb(255, 255, 255);
   margin-left: 10px;
 
 }
 
 .imagen{
-    width: 270px;
-    height: 400px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 250px;
+    height: 350px;
     position: relative;
-    margin-right: 20px;
-    border-radius: 5%;
-    transition: transform .3s;
+    border-radius: 3%;
     object-fit: cover;
 }
 
-.imagen:hover {
-    transform: scale(1.03);
-  }
+.imagenRookies{
+  
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 200px;
+    height: 200px;
+    border-radius: 3%;
+    object-fit: cover;
+}
+
+
 
 .texto{
-    position: absolute;
-    color: black;
+  width: 270px;
+  background-image: url('/assets/imgback.jpg');
+    position: relative;
+    height: 60px;
+    text-align: center;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
     width: 300px;
     font-family:'FuenteNavNegro';
-    margin-top: 10px;
+    margin-top: 40px;
     font-size: 20px;
 }
 
-.margenes{
-  flex-wrap: wrap;
-    margin-left: 40px;
-    margin-right:40px;
-    margin-top: 50px;
-    display: flex;
-}
 
-.margenAbajo{
-  margin-bottom: 150px;
-}
+
 
 
 
 
 .imagenCarrusel{
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
   object-position: top;
-  border-bottom-right-radius: 2%;
-  border-bottom-left-radius: 2%;
-  filter: brightness(0.7);
+
+  filter: brightness(0.5);
   
 }
 
@@ -149,11 +175,33 @@
 .container img { display: block; }
 .container .fa-download { position: absolute;  top:10px; right:50px;   }
 .container .fa-download2 { position: absolute;  top:50px; right:50px;   }
-
+.container .fa-download3 { position: absolute;  top:300px;   width: 270px; }
 
 .botonCrear{
   color:white;
   background-color:gray ;
   border-color: white;
   margin-left: 70px;
+}
+
+
+.contenedor-imagen {
+  position: relative;
+  display: inline-block;
+}
+
+.texto-superpuesto {
+  height: 450px;
+  width: 450px;
+  position: absolute;
+  border-radius: 30px;
+  top: 50%; /* Ajusta la posición vertical */
+  left: 50%; /* Ajusta la posición horizontal */
+  transform: translate(-50%, -50%); /* Centra el texto */
+  color: white; /* Color del texto */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: bold; /* Grosor del texto */
+text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+  background-color: rgba(131, 129, 129, 0.5);
 }

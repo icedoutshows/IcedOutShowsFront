@@ -3,33 +3,34 @@
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
             <form >
-                <div class="form-group">
+            
+                <div class="form-group margen">
                     <label for="descripcion">Descripción:</label>
                     <input type="text" class="form-control" id="descripcion" name="descripcion"
                     [(ngModel)]="descripcion" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group  margen">
                     <label for="imagen">Imagen:</label>
                     <input type="text" class="form-control" id="imagen" name="imagen"
                     [(ngModel)]="imagen" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group margen">
                     <label for="titulo">Título:</label>
                     <input type="text" class="form-control" id="titulo" name="titulo"
                     [(ngModel)]="titulo" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group margen" >
                     <label for="recomendado">Recomendado:</label><br>
-                    <label for="siCheckbox">Sí</label>
+                    <label for="siCheckbox" style="margin-right: 10px;">Sí</label>
                     <input type="radio"  id="siCheckbox" name="opcion" value="true"
-                    [(ngModel)]="recomendado" required>
+                    [(ngModel)]="recomendado" required style="margin-right: 10px;">
                 
-                    <label for="noCheckbox">No</label>
+                    <label for="noCheckbox" style="margin-right: 10px;" >No</label>
                     <input type="radio" id="noCheckbox" name="opcion" value="false"
                     [(ngModel)]="recomendado" required>
                 </div>
              
-                
+         
                 <button type="button" class="btn btn-outline-success btn-block " (click)="crear()">
                     <i class="fas fa-plus-circle"></i> Crear</button>
                 

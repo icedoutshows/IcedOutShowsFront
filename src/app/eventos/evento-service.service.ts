@@ -84,8 +84,8 @@ export class EventoServiceService {
     return this.http.get<any>(`${this.url}/entradas?nombreUsuario=${nombreUsuario}`)
   }
 
-  asignarEntradaAUsuario(nombreUsuario:string,idEntrada:number):Observable<any>{
-    return this.http.post<any>(`${this.url}/entradasComprar?nombreUsuario=${nombreUsuario}&idEntrada=${idEntrada}`,{headers:this.httpHeaders})
+  asignarEntradaAUsuario(nombreUsuario:string,idEntrada:number,numEntradas:number):Observable<any>{
+    return this.http.post<any>(`${this.url}/entradasComprar?nombreUsuario=${nombreUsuario}&idEntrada=${idEntrada}&numEntradas=${numEntradas}`,{headers:this.httpHeaders})
   }
 
   authenticateEntradas(idEntrada:number,nombreUsuario:string):Observable<any>{

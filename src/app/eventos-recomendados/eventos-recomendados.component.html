@@ -1,43 +1,101 @@
 <app-navbar></app-navbar>
+
 <div class="contenedor">
- 
+
+
   <carousel>
-    <slide *ngFor="let eventoRec of eventosRecomendados" [routerLink]="['/evento/', eventoRec.evento_id]">
-      <div style="position: relative;">
-         <img [src]="eventoRec.imagen" class="imagenCarrusel" alt="Slide">
-      <h3 class="textoRec" style="margin-right: 10px;">{{eventoRec.descripcion}} <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', eventoRec.evento_id]" class="textoRec" src="../assets/edit.png"/></h3>
-      
-   
-    </div>
+    <slide style="cursor: pointer; height: 530px;" *ngFor="let eventoRec of eventosRecomendados"
+      [routerLink]="['/evento/', eventoRec.evento_id]">
+      <div style="position: relative; ">
+        <img [src]="eventoRec.imagen" class="imagenCarrusel" style="height: 530px" alt="Slide">
+        <h3 class="textoRec" style="margin-right: 10px;">{{eventoRec.descripcion}} <img alt="edit" *ngIf="isAdmin"
+            [routerLink]="['/editar/', eventoRec.evento_id]" class="textoRec" src="../assets/edit.png" /></h3>
+      </div>
     </slide>
   </carousel>
 
-     
-      <br>
-      
-      
+  <br>
 
 
 
+  <button type="button" *ngIf="isAdmin" class="btn btn-outline-primary botonCrear " routerLink="/crear">Crear Evento
+    <img alt="img" src="../assets/add.png"> </button>
 
-      <button type="button" *ngIf="isAdmin" class="btn btn-outline-primary botonCrear " routerLink="/crear">Crear Evento <img alt="img" src="../assets/add.png"> </button>
+  <!-- Eventos en modo tarjeta -->
+  <div class="image-grid" style="background-color: rgb(216, 213, 213); ">
 
-     <!-- Eventos en modo tarjeta -->
-     <div class="margenes" >
-     
-      <div *ngFor="let evento of eventosLista" class="margenAbajo" [routerLink]="['/evento/', evento.evento_id]"
-        routerLinkActivated="active">
-          <div class="container"> 
-        <img class="imagen" alt="img" src="{{evento.imagen}}">
-        <div>
-        <img alt="cancel" *ngIf="isAdmin" (click)="eliminarEvento(evento)" class="fa-download" src="../assets/cancel.png"/>
-        <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', evento.evento_id]" class="fa-download2" src="../assets/edit.png"/>
-      </div>
-      </div> 
-         <p class="texto">{{evento.descripcion}}</p>
-           
+
+    <div style="margin-left: 35px; margin-top: 20px;  margin-bottom: 60px;" *ngFor="let evento of eventosLista" 
+      [routerLink]="['/evento/', evento.evento_id]" routerLinkActivated="active">
+      <div>
+        <img class="imagen" style="cursor: pointer;" alt="img" src="{{evento.imagen}}">
+
+        <div >
+          <img alt="cancel" *ngIf="isAdmin" (click)="eliminarEvento(evento)" class="fa-download"
+            src="../assets/cancel.png"/>
+          <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', evento.evento_id]" class="fa-download2"
+            src="../assets/edit.png"/>
+          <div style="display: flex;">
+            <p>15/05/2024</p>
+            <p style="margin-left: 60px; font-weight: bold;">Madrid</p>
+          </div>
+          <p style="font-weight: bolder; font-size: 20px;">Nombre Artista</p>
         </div>
+      </div>
+  </div>
 </div>
 
-       
+  <div style="background-color: rgb(20, 23, 199); display: flex; border: solid; border-width: 5px; margin-bottom: 50px;">
+
+    <img style="height: 400px; width: 400px;" alt="img"
+      src="https://i1.sndcdn.com/artworks-Txbm9oZzHT4SjqI0-JJ8HYA-t500x500.jpg">
+    <div style="display: block;">
+      <h1 style="color: white; margin-top: 40px; margin-left: 40px; font-family: DayRom;">ARTISTA DEL MES</h1>
+      <h1 style="color: rgb(255, 255, 255); margin-top: 30px; margin-left: 40px; font-size: 30px;">Gunna</h1>
+      <p style="border-radius: 15px;padding: 20px; width: 600px;  background-color: rgb(64, 64, 228); color: white;margin-left: 40px;">
+        Sergio Giavanni Kitchens más conocido por su nombre artístico, Gunna, es un rapero, cantante y compositor
+        estadounidense.​Su primer álbum de estudio, Drip or Drown 2 fue publicado en 2019, y su segundo, Wunna, fue
+        publicado en 2020, debutando en el top Billboard 200.​</p>
+    </div>
+  </div>
+  <hr style="margin: 0 auto; width: 90%; ">
+
+  
+ 
+  <div style="background-color: rgb(0, 0, 0); display: flex; height: 300px; margin-bottom: 100px; margin-top: 50px;  ">
+    <h3 class="ultimosEventos" style=" color: rgb(255, 255, 255); font-weight: bolder; position: absolute;">ROOKIES</h3>
+    <div style="margin-left: 35px; margin-top: 70px;" *ngFor="let evento of eventosLista" class="margenAbajo hovering"
+      [routerLink]="['/evento/', evento.evento_id]" routerLinkActivated="active">
+      <div class="container" style="cursor: pointer;">
+        <img class="imagenRookies" alt="img" src="{{evento.imagen}}">
+        <div>
+          <img alt="cancel" *ngIf="isAdmin" (click)="eliminarEvento(evento)" class="fa-download"
+            src="../assets/cancel.png" />
+          <img alt="edit" *ngIf="isAdmin" [routerLink]="['/editar/', evento.evento_id]" class="fa-download2"
+            src="../assets/edit.png" />
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div
+    style="background-color:  rgb(216, 213, 213); display: flex; justify-content: center; height: 450px; margin: 0 auto; width: 90%; ">
+
+    <div style="border-radius: 30px;  height: 450px; width: 450px;  background-color:rgb(104, 66, 66) ;display: flex;"
+      class="contenedor-imagen"><img style=" height: 450px; width: 450px; border-radius: 30px; " alt="img"
+        src="/assets/españa.png">
+      <p class="texto-superpuesto">ARTISTAS ESPAÑA</p>
+    </div>
+    <div
+      style="border-radius: 30px; margin-left: 150px; height: 450px; width: 450px;  background-color: rgb(139, 135, 135);display: flex;"
+      class="contenedor-imagen"><img style=" height: 450px; width: 450px; border-radius: 30px;" alt="img"
+        src="/assets/world.png">
+      <p class="texto-superpuesto">ARTISTAS WORLDWIDE</p>
+    </div>
+
+  </div>
+
+
 </div>

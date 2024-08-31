@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AgregarEntradaComponent {
 
-  entrada:Entrada=new Entrada("","","","",0)
+  entrada:Entrada=new Entrada("")
   entradas:Entrada[]=[]
   id!:number;
 

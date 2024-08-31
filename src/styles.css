@@ -1,18 +1,51 @@
-@font-face {
-    font-family: 'FuenteIcedOut';
-    src: url('.\assets\Whitestone.otf')
-  
-  }
-  @font-face {
-    font-family: 'FuenteShows';
-    src: url('.\assets\Pyromaani.ttf')
-  
-  }
+::-webkit-scrollbar{
+  background-color: #000000; /* Color de fondo del riel */
+  color: wheat;
+  width: 5px;
+}
 
-  @font-face {
-    font-family: 'FuenteNavNegro';
-    src: url('.\assets\Kanit-SemiBold.ttf')
-  
-  }
- 
-  
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Color del botón de la barra de desplazamiento */
+}
+
+html {
+  overflow-x: hidden;
+}
+
+
+@font-face {
+  font-family: 'FuenteIcedOut';
+
+  src: url('.\assets\Whitestone.otf')
+}
+
+@font-face {
+  font-family: 'FuenteShows';
+
+  src: url('.\assets\Pyromaani.ttf')
+}
+
+@font-face {
+  font-family: 'FuenteNavNegro';
+
+  src: url('.\assets\Kanit-SemiBold.ttf')
+}
+
+
+@font-face {
+  font-family: 'Lato';
+
+  src: url('.\assets\Lato-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Anton';
+
+  src: url('.\assets\Anton-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'DayRom';
+
+  src: url('.\assets\DAYROM__.ttf')
+}
